@@ -12,9 +12,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"golang.org/x/lint"
 
-	examplePetstoreClient "github.com/deepmap/oapi-codegen/v2/examples/petstore-expanded"
-	examplePetstore "github.com/deepmap/oapi-codegen/v2/examples/petstore-expanded/echo/api"
-	"github.com/deepmap/oapi-codegen/v2/pkg/codegen"
+	examplePetstoreClient "github.com/stefanobaghino/oapi-codegen/v2/examples/petstore-expanded"
+	examplePetstore "github.com/stefanobaghino/oapi-codegen/v2/examples/petstore-expanded/echo/api"
+	"github.com/stefanobaghino/oapi-codegen/v2/pkg/codegen"
 )
 
 func checkLint(t *testing.T, filename string, code []byte) {

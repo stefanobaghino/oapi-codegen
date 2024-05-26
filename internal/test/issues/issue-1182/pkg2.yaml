@@ -6,7 +6,7 @@ info:
   license:
     name: MIT
 servers:
-  - url: http://openapitest.deepmap.ai
+  - url: http://openapitest.stefanobaghino.ai
 components:
   responses:
     ResponseWithReference:

@@ -12,7 +12,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/deepmap/oapi-codegen/v2/examples/petstore-expanded/chi/api"
+	"github.com/stefanobaghino/oapi-codegen/v2/examples/petstore-expanded/chi/api"
 	middleware "github.com/oapi-codegen/nethttp-middleware"
 	"github.com/go-chi/chi/v5"
 )

@@ -11,9 +11,9 @@ import (
 )
 
 const (
-	remoteRefFile = `https://raw.githubusercontent.com/deepmap/oapi-codegen/master/examples/petstore-expanded` +
+	remoteRefFile = `https://raw.githubusercontent.com/stefanobaghino/oapi-codegen/master/examples/petstore-expanded` +
 		`/petstore-expanded.yaml`
-	remoteRefImport = `github.com/deepmap/oapi-codegen/v2/examples/petstore-expanded`
+	remoteRefImport = `github.com/stefanobaghino/oapi-codegen/v2/examples/petstore-expanded`
 )
 
 func checkLint(t *testing.T, filename string, code []byte) {
@@ -207,7 +207,7 @@ func TestRemoteExternalReference(t *testing.T) {
 	assert.Contains(t, code, "package api")
 
 	// Check import
-	assert.Contains(t, code, `externalRef0 "github.com/deepmap/oapi-codegen/v2/examples/petstore-expanded"`)
+	assert.Contains(t, code, `externalRef0 "github.com/stefanobaghino/oapi-codegen/v2/examples/petstore-expanded"`)
 
 	// Check generated oneOf structure:
 	assert.Contains(t, code, `

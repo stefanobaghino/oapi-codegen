@@ -19,8 +19,8 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/deepmap/oapi-codegen/v2/examples/petstore-expanded/echo/api"
-	"github.com/deepmap/oapi-codegen/v2/examples/petstore-expanded/echo/api/models"
+	"github.com/stefanobaghino/oapi-codegen/v2/examples/petstore-expanded/echo/api"
+	"github.com/stefanobaghino/oapi-codegen/v2/examples/petstore-expanded/echo/api/models"
 	"github.com/oapi-codegen/testutil"
 	"github.com/labstack/echo/v4"
 	echoMiddleware "github.com/labstack/echo/v4/middleware"

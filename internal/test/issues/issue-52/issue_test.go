@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/deepmap/oapi-codegen/v2/pkg/codegen/openapi"
+	"github.com/stefanobaghino/oapi-codegen/v2/pkg/codegen/openapi"
 )
 
 //go:embed spec.yaml

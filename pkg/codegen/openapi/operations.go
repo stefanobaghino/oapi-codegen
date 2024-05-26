@@ -28,7 +28,7 @@ import (
 	v3 "github.com/pb33f/libopenapi/datamodel/high/v3"
 	"github.com/pb33f/libopenapi/orderedmap"
 
-	"github.com/deepmap/oapi-codegen/v2/pkg/util"
+	"github.com/stefanobaghino/oapi-codegen/v2/pkg/util"
 )
 
 type ParameterDefinition struct {

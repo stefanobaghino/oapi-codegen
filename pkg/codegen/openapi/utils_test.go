@@ -48,7 +48,7 @@ func TestRefPathToGoType(t *testing.T) {
 	old := globalState.importMapping
 	globalState.importMapping = constructImportMapping(map[string]string{
 		"doc.json":                    "externalref0",
-		"http://deepmap.com/doc.json": "externalref1",
+		"http://stefanobaghino.com/doc.json": "externalref1",
 	})
 	defer func() { globalState.importMapping = old }()
 
@@ -84,12 +84,12 @@ func TestRefPathToGoType(t *testing.T) {
 		},
 		{
 			name:   "url-root",
-			path:   "http://deepmap.com/doc.json#/foo_bar",
+			path:   "http://stefanobaghino.com/doc.json#/foo_bar",
 			goType: "externalRef1.FooBar",
 		},
 		{
 			name:   "url-pathed",
-			path:   "http://deepmap.com/doc.json#/components/parameters/foo_bar",
+			path:   "http://stefanobaghino.com/doc.json#/components/parameters/foo_bar",
 			goType: "externalRef1.FooBar",
 		},
 		{
@@ -102,7 +102,7 @@ func TestRefPathToGoType(t *testing.T) {
 		},
 		{
 			name: "url-too-deep",
-			path: "http://deepmap.com/doc.json#/components/parameters/foo/foo_bar",
+			path: "http://stefanobaghino.com/doc.json#/components/parameters/foo/foo_bar",
 		},
 	}
 
@@ -126,8 +126,8 @@ func TestIsWholeDocumentReference(t *testing.T) {
 	assert.Equal(t, false, IsWholeDocumentReference("doc.json#/components/schemas/Foo"))
 	assert.Equal(t, true, IsWholeDocumentReference("doc.json"))
 	assert.Equal(t, true, IsWholeDocumentReference("../doc.json"))
-	assert.Equal(t, false, IsWholeDocumentReference("http://deepmap.com/doc.json#/components/parameters/foo_bar"))
-	assert.Equal(t, true, IsWholeDocumentReference("http://deepmap.com/doc.json"))
+	assert.Equal(t, false, IsWholeDocumentReference("http://stefanobaghino.com/doc.json#/components/parameters/foo_bar"))
+	assert.Equal(t, true, IsWholeDocumentReference("http://stefanobaghino.com/doc.json"))
 }
 
 func TestIsGoTypeReference(t *testing.T) {
@@ -136,8 +136,8 @@ func TestIsGoTypeReference(t *testing.T) {
 	assert.Equal(t, true, IsGoTypeReference("doc.json#/components/schemas/Foo"))
 	assert.Equal(t, false, IsGoTypeReference("doc.json"))
 	assert.Equal(t, false, IsGoTypeReference("../doc.json"))
-	assert.Equal(t, true, IsGoTypeReference("http://deepmap.com/doc.json#/components/parameters/foo_bar"))
-	assert.Equal(t, false, IsGoTypeReference("http://deepmap.com/doc.json"))
+	assert.Equal(t, true, IsGoTypeReference("http://stefanobaghino.com/doc.json#/components/parameters/foo_bar"))
+	assert.Equal(t, false, IsGoTypeReference("http://stefanobaghino.com/doc.json"))
 }
 
 func TestSwaggerUriToIrisUri(t *testing.T) {
@@ -396,7 +396,7 @@ func TestRefPathToObjName(t *testing.T) {
 		"#/components/parameters/Bar":                      "Bar",
 		"#/components/responses/baz_baz":                   "baz_baz",
 		"document.json#/Foo":                               "Foo",
-		"http://deepmap.com/schemas/document.json#/objObj": "objObj",
+		"http://stefanobaghino.com/schemas/document.json#/objObj": "objObj",
 	} {
 		assert.Equal(t, want, RefPathToObjName(in))
 	}

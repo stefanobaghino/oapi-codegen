@@ -36,7 +36,7 @@ import (
 	"github.com/pb33f/libopenapi/orderedmap"
 	"golang.org/x/tools/imports"
 
-	"github.com/deepmap/oapi-codegen/v2/pkg/util"
+	"github.com/stefanobaghino/oapi-codegen/v2/pkg/util"
 )
 
 // Embed the templates directory

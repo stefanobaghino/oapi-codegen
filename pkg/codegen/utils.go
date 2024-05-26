@@ -326,7 +326,7 @@ func StringInArray(str string, array []string) bool {
 //	#/components/parameters/Bar -> Bar
 //	#/components/responses/baz_baz -> baz_baz
 //	document.json#/Foo -> Foo
-//	http://deepmap.com/schemas/document.json#/objObj -> objObj
+//	http://stefanobaghino.com/schemas/document.json#/objObj -> objObj
 //
 // Does not check refPath correctness.
 func RefPathToObjName(refPath string) string {
@@ -342,7 +342,7 @@ func RefPathToObjName(refPath string) string {
 // #/components/parameters/Bar -> Bar
 // #/components/responses/Baz -> Baz
 // Remote components (document.json#/Foo) are supported if they present in --import-mapping
-// URL components (http://deepmap.com/schemas/document.json#/Foo) are supported if they present in --import-mapping
+// URL components (http://stefanobaghino.com/schemas/document.json#/Foo) are supported if they present in --import-mapping
 // Remote and URL also support standard local paths even though the spec doesn't mention them.
 func RefPathToGoType(refPath string) (string, error) {
 	return refPathToGoType(refPath, true)
@@ -404,8 +404,8 @@ func IsGoTypeReference(ref string) bool {
 // #/components/schemas/Foo                             -> false
 // ./local/file.yml#/components/parameters/Bar          -> false
 // ./local/file.yml                                     -> true
-// http://deepmap.com/schemas/document.json             -> true
-// http://deepmap.com/schemas/document.json#/Foo        -> false
+// http://stefanobaghino.com/schemas/document.json             -> true
+// http://stefanobaghino.com/schemas/document.json#/Foo        -> false
 func IsWholeDocumentReference(ref string) bool {
 	return ref != "" && !strings.ContainsAny(ref, "#")
 }
