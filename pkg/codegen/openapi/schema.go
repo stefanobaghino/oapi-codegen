@@ -627,6 +627,8 @@ func oapiSchemaToGoType(schema *base.Schema, path []string, outSchema *Schema) e
 			outSchema.GoType = "string"
 		}
 		outSchema.DefineViaAlias = true
+	case "null":
+		// Nothing to do, types are always nullable
 	default:
 		return fmt.Errorf("unhandled Schema type: %s", t)
 	}
